@@ -55,7 +55,7 @@ body {
 }
 
 .question-title {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 700;
     color: #000;
     text-align: center;
@@ -200,7 +200,7 @@ body {
     }
     
     .question-title {
-        font-size: 2rem;
+        font-size: 3rem;
     }
     
     .logo img {

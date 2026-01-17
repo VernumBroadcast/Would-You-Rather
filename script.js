@@ -13,16 +13,20 @@ const questions = [
         right: { text: "Burgers", emoji: "🍔" }
     },
     {
-        left: { text: "Netflix", emoji: "📺" },
-        right: { text: "YouTube", emoji: "▶️" }
+        left: { text: "Disney+", emoji: "🎬" },
+        right: { text: "Netflix", emoji: "📺" }
     },
     {
-        left: { text: "iPhone", emoji: "📱" },
-        right: { text: "Android", emoji: "🤖" }
+        left: { text: "iPhone 17 Pro", emoji: "📱" },
+        right: { text: "Samsung S300", emoji: "📱" }
     },
     {
-        left: { text: "Dogs", emoji: "🐕" },
-        right: { text: "Cats", emoji: "🐈" }
+        left: { text: "iPad", emoji: "📱" },
+        right: { text: "MacBook", emoji: "💻" }
+    },
+    {
+        left: { text: "Zain", image: "Zain Logo.png" },
+        right: { text: "Zain", image: "Zain Logo.png" }
     },
     {
         left: { text: "TikTok", emoji: "🎵" },
@@ -157,11 +161,22 @@ function displayQuestion() {
         opt.classList.remove('selected', 'fade-out');
     });
     
-    // Update content
+    // Update text content
     leftOption.textContent = question.left.text;
     rightOption.textContent = question.right.text;
-    leftImage.textContent = question.left.emoji;
-    rightImage.textContent = question.right.emoji;
+    
+    // Update images/emojis - handle both image and emoji cases
+    if (question.left.image) {
+        leftImage.innerHTML = `<img src="${question.left.image}" alt="${question.left.text}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+    } else {
+        leftImage.textContent = question.left.emoji;
+    }
+    
+    if (question.right.image) {
+        rightImage.innerHTML = `<img src="${question.right.image}" alt="${question.right.text}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+    } else {
+        rightImage.textContent = question.right.emoji;
+    }
 }
 
 // Setup event listeners
